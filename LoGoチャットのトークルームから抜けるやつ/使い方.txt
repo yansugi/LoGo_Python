@@ -1,0 +1,9 @@
+①LGWANで使っているChromeと同じバージョンのChromeWebDriverを入手してください
+	Google Chrome を起動します。
+	画面右上の「︙」または「三点リーダー」をクリックします。
+	「ヘルプ」をクリックします。
+	「Google Chrome について」をクリックします。
+	「バージョン」と書かれているところに、ブラウザのバージョンが表示されます。
+②「chromedriver.exe」としてLoGoChatEscape2.exeと同じフォルダ内に置いてください
+③config.iniをメモ帳で開き、市町村の環境に合わせて修正してください
+④LoGoChatEscape2.exeを起動し、必要な項目を入力してからボタンを押してください

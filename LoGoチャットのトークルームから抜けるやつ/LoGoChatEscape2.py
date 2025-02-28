@@ -2,6 +2,7 @@
 # coding: utf-8
 
 
+import configparser
 import sys
 import time
 import tkinter as tk
@@ -13,13 +14,13 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
 ####################################################################################################
-# setting
-groupId = "********"  # アカウント管理グループID
-organization = "**県**市"  # 組織名
-rooms = 30  # 退出する部屋数
-mail_domain = "@****.******.lg.jp"  # メールアドレスのドメイン
-url_login = "https://tb.logochat.st-japan.asp.lgwan.jp/signin"  # ログインページのURL
-# url_login = "https://logochat.jp/signin" #インターネット側はこちら
+config = configparser.ConfigParser()
+config.read("config.ini", encoding="utf-8")
+mail_domain = config["DEFAULT"]["mail_domain"]
+groupId = config["DEFAULT"]["groupId"]
+organization = config["DEFAULT"]["organization"]
+rooms = config["DEFAULT"]["rooms"]
+url_login = config["DEFAULT"]["url_login"]
 ####################################################################################################
 
 
@@ -82,7 +83,7 @@ rooms_menu.grid(row=4, column=1, padx=10, pady=5, sticky=tk.W)
 label_organization = tk.Label(root, text="組織名:")
 label_organization.grid(row=5, column=0, padx=10, pady=5, sticky=tk.E)
 entry_organization = tk.Entry(root, width=50, justify="center")
-entry_organization.insert(0, "奈良県橿原市")
+entry_organization.insert(0, organization)
 entry_organization.grid(row=5, column=1, padx=10, pady=5)
 
 submit_button = tk.Button(root, text="処理開始", command=submit)
