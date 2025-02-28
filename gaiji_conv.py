@@ -1,3 +1,4 @@
+#%%
 import os
 import tkinter as tk
 from tkinter import ttk  # ttkモジュールをインポート
@@ -161,3 +162,5 @@ drop_target.dnd_bind("<<Drop>>", drop)
 
 # メインループの開始
 root.mainloop()
+
+# %%
